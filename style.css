@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #292929;  /* Dark Gray Background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background: #1f1f1f; /* Slightly Lighter Black */
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+.container p {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #e6d62d; /* Gold Accent */
+}
+
+.container input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #444;
+    background: #333; /* Dark Input Background */
+    color: #e6d62d;
+    outline: none;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container input::placeholder {
+    color: #b5b5b5; /* Light Gray Placeholder */
+}
+
+.container button {
+    width: 100%;
+    height: 50px;
+    background: #e6d62d; /* Gold */
+    color: #292929; /* Dark Text */
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(230, 214, 45, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.container button:hover {
+    background: #c6b224; /* Darker Gold */
+    transform: scale(1.05);
+}
+
+/* QR Code Box Animation */
+#imgBox {
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: max-height 1s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    margin: 0 auto;
+}
+
+#imgBox.show-img {
+    max-height: 300px;
+    opacity: 1;
+    transform: scale(1);
+    margin: 10px auto;
+    border: 1px solid #444;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .container p {
+        font-size: 14px;
+    }
+
+    .container input, 
+    .container button {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #imgBox {
+        width: 180px;
+    }
+}
